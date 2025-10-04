@@ -1,0 +1,94 @@
+/**
+ * Spacing Utilities
+ * Margin and padding helpers
+ */
+
+/* Margin */
+.u-m-0 {
+  margin: var(--spacing-0);
+}
+.u-m-2 {
+  margin: var(--spacing-2);
+}
+.u-m-4 {
+  margin: var(--spacing-4);
+}
+.u-m-6 {
+  margin: var(--spacing-6);
+}
+.u-m-8 {
+  margin: var(--spacing-8);
+}
+
+.u-mt-0 {
+  margin-block-start: var(--spacing-0);
+}
+.u-mt-2 {
+  margin-block-start: var(--spacing-2);
+}
+.u-mt-4 {
+  margin-block-start: var(--spacing-4);
+}
+.u-mt-6 {
+  margin-block-start: var(--spacing-6);
+}
+.u-mt-8 {
+  margin-block-start: var(--spacing-8);
+}
+
+.u-mb-0 {
+  margin-block-end: var(--spacing-0);
+}
+.u-mb-2 {
+  margin-block-end: var(--spacing-2);
+}
+.u-mb-4 {
+  margin-block-end: var(--spacing-4);
+}
+.u-mb-6 {
+  margin-block-end: var(--spacing-6);
+}
+.u-mb-8 {
+  margin-block-end: var(--spacing-8);
+}
+
+.u-mx-auto {
+  margin-inline: auto;
+}
+
+/* Padding */
+.u-p-0 {
+  padding: var(--spacing-0);
+}
+.u-p-2 {
+  padding: var(--spacing-2);
+}
+.u-p-4 {
+  padding: var(--spacing-4);
+}
+.u-p-6 {
+  padding: var(--spacing-6);
+}
+.u-p-8 {
+  padding: var(--spacing-8);
+}
+
+.u-px-2 {
+  padding-inline: var(--spacing-2);
+}
+.u-px-4 {
+  padding-inline: var(--spacing-4);
+}
+.u-px-6 {
+  padding-inline: var(--spacing-6);
+}
+
+.u-py-2 {
+  padding-block: var(--spacing-2);
+}
+.u-py-4 {
+  padding-block: var(--spacing-4);
+}
+.u-py-6 {
+  padding-block: var(--spacing-6);
+}

@@ -1,0 +1,74 @@
+/**
+ * Display & Visibility Utilities
+ */
+
+.u-block {
+  display: block;
+}
+.u-inline-block {
+  display: inline-block;
+}
+.u-inline {
+  display: inline;
+}
+.u-flex {
+  display: flex;
+}
+.u-inline-flex {
+  display: inline-flex;
+}
+.u-grid {
+  display: grid;
+}
+.u-hidden {
+  display: none;
+}
+
+/* Text Alignment */
+.u-text-left {
+  text-align: left;
+}
+.u-text-center {
+  text-align: center;
+}
+.u-text-right {
+  text-align: right;
+}
+
+/* Text Transform */
+.u-uppercase {
+  text-transform: uppercase;
+}
+.u-lowercase {
+  text-transform: lowercase;
+}
+.u-capitalize {
+  text-transform: capitalize;
+}
+
+/* Font Weight */
+.u-font-normal {
+  font-weight: var(--font-weight-regular);
+}
+.u-font-medium {
+  font-weight: var(--font-weight-medium);
+}
+.u-font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.u-font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Screen Reader Only */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

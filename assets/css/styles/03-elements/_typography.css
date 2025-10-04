@@ -1,0 +1,132 @@
+/**
+ * Base Typography
+ * Styles for bare HTML elements
+ */
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin-block-end: var(--spacing-4);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin-block-end: var(--spacing-4);
+  line-height: var(--line-height-relaxed);
+}
+
+a {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: var(--transition-colors);
+
+  &:hover {
+    color: var(--color-primary-700);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: var(--border-width-2) solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+code,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: var(--spacing-1) var(--spacing-2);
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-sm);
+  color: var(--color-error);
+}
+
+pre {
+  padding: var(--spacing-4);
+  overflow-x: auto;
+  background-color: var(--color-neutral-900);
+  border-radius: var(--radius-base);
+  color: var(--color-neutral-0);
+  line-height: var(--line-height-normal);
+
+  & code {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+blockquote {
+  margin-block: var(--spacing-6);
+  padding-inline-start: var(--spacing-4);
+  border-inline-start: var(--border-width-4) solid var(--color-primary-600);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+hr {
+  border: 0;
+  border-block-start: var(--border-width-1) solid var(--color-border-default);
+  margin-block: var(--spacing-8);
+}

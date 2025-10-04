@@ -1,0 +1,17 @@
+/**
+ * Main Stylesheet - ITCSS with CSS Cascade Layers
+ * Explicit cascade control for maximum maintainability
+ */
+
+/* Define layer order upfront - lowest to highest priority */
+@layer reset, elements, objects, components, utilities;
+
+/* Import settings (not layered - highest priority) */
+@import '01-settings/_index.css';
+
+/* Import other layers */
+@import '02-generic/_index.css' layer(reset);
+@import '03-elements/_index.css' layer(elements);
+@import '04-objects/_index.css' layer(objects);
+@import '05-components/_index.css' layer(components);
+@import '06-utilities/_index.css' layer(utilities);

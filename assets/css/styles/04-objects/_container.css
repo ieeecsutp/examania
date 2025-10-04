@@ -1,0 +1,41 @@
+/**
+ * Container Object
+ * Responsive wrapper with max-width constraints
+ */
+
+.o-container {
+  container-type: inline-size;
+  container-name: main-container;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--spacing-4);
+
+  @media (min-width: 640px) {
+    max-width: var(--container-sm);
+  }
+
+  @media (min-width: 768px) {
+    max-width: var(--container-md);
+    padding-inline: var(--spacing-6);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: var(--container-lg);
+  }
+
+  @media (min-width: 1280px) {
+    max-width: var(--container-xl);
+  }
+
+  @media (min-width: 1536px) {
+    max-width: var(--container-2xl);
+  }
+}
+
+.o-container--fluid {
+  max-width: 100%;
+}
+
+.o-container--narrow {
+  max-width: var(--container-md);
+}
