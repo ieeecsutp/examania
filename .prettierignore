@@ -1,6 +1,0 @@
-node_modules
-dist
-build
-assets/css/main.css
-package-lock.json
-.husky

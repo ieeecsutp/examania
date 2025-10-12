@@ -1,7 +1,0 @@
-/**
- * Settings Layer Index
- * Design tokens and global configuration
- * Not wrapped in @layer - these have highest priority
- */
-
-@import './_tokens.css';
