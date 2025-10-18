@@ -1,0 +1,141 @@
+---
+// components/HeroCarousel.astro
+---
+
+<section class="carousel-wrapper">
+  
+  <div id="hero-splide" class="splide" aria-label="Características principales">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-brain">
+                <path d="M50 20 C30 20 20 30 20 45 C20 50 22 55 25 58 C25 65 30 70 35 72 C35 75 37 78 40 80 C42 82 45 83 48 83 L52 83 C55 83 58 82 60 80 C63 78 65 75 65 72 C70 70 75 65 75 58 C78 55 80 50 80 45 C80 30 70 20 50 20 M35 45 C35 42 37 40 40 40 C43 40 45 42 45 45 C45 48 43 50 40 50 C37 50 35 48 35 45 M60 40 C63 40 65 42 65 45 C65 48 63 50 60 50 C57 50 55 48 55 45 C55 42 57 40 60 40" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Generación por IA</h3>
+            <p>Crea preguntas inteligentes automáticamente usando Inteligencia Artificial avanzada</p>
+          </div>
+        </li>
+
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-template">
+                <rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
+                <circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
+                <circle cx="50" cy="50" r="5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Plantillas profesionales</h3>
+            <p>Accede a plantillas diseñadas por expertos y personalízalas según tus necesidades</p>
+          </div>
+        </li>
+
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-difficulty">
+                <path d="M30 70 L50 30 L70 70 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M40 60 L50 45 L60 60" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Visualiza la dificultad</h3>
+            <p>Controla y ajusta el nivel de complejidad de cada pregunta con indicadores visuales</p>
+          </div>
+        </li>
+
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-team">
+                <circle cx="40" cy="40" r="12" fill="currentColor"/>
+                <circle cx="60" cy="40" r="12" fill="currentColor"/>
+                <path d="M25 70 C25 60 32 55 40 55 C48 55 52 60 52 70" fill="currentColor"/>
+                <path d="M48 70 C48 60 55 55 60 55 C68 55 75 60 75 70" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Colaboración en equipo</h3>
+            <p>Trabaja junto a tu equipo en tiempo real para crear mejores evaluaciones</p>
+          </div>
+        </li>
+
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-time">
+                <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M50 50 L50 30" stroke="currentColor" stroke-width="3"/>
+                <path d="M50 50 L65 50" stroke="currentColor" stroke-width="3"/>
+              </svg>
+            </div>
+            <h3>Ahorra tiempo</h3>
+            <p>Reduce horas de trabajo manual a solo minutos con automatización inteligente</p>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="feature-card">
+            <div class="icon-container">
+              <svg viewBox="0 0 100 100" class="icon-time">
+                <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="3"/>
+                <path d="M50 50 L50 30" stroke="currentColor" stroke-width="3"/>
+                <path d="M50 50 L65 50" stroke="currentColor" stroke-width="3"/>
+              </svg>
+            </div>
+            <h3>Ahorra tiempo</h3>
+            <p>Reduce horas de trabajo manual a solo minutos con automatización inteligente</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  import Splide from '@splidejs/splide';
+  import '@splidejs/splide/css';
+
+  function initCarousel() {
+    const carouselElement = document.querySelector('#hero-splide');
+    
+    if (carouselElement && !carouselElement.classList.contains('is-initialized')) {
+      const splide = new Splide('#hero-splide', {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        autoplay: true,
+        interval: 3500,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        arrows: true,
+        pagination: true,
+        gap: '2rem',
+        padding: { left: '2rem', right: '2rem' },
+        breakpoints: {
+          1024: {
+            perPage: 2,
+            gap: '1.5rem',
+            padding: { left: '1rem', right: '1rem' },
+          },
+          768: {
+            perPage: 1,
+            gap: '1rem',
+            padding: { left: '0.5rem', right: '0.5rem' },
+          }
+        }
+      });
+
+      splide.mount();
+    }
+  }
+
+  document.addEventListener('astro:page-load', initCarousel);
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+</script>

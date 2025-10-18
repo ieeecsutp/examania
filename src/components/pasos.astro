@@ -1,0 +1,195 @@
+---
+// src/components/StepsAccordion.astro
+interface Props {
+  title?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const {
+  title = "Cómo crear el modelo",
+  ctaText = "Crear un examen online",
+  ctaLink = "#"
+} = Astro.props;
+---
+
+<section class="steps-section">
+  <div class="steps-container">
+    <!-- Lado izquierdo - Laptop -->
+    <div class="laptop-side">
+      <div class="laptop-mockup">
+        <div class="laptop-screen">
+          <div class="screen-header">
+            <div class="logo">
+              <span class="logo-icon">📝</span>
+              <span class="logo-text">EXAMANIA</span>
+            </div>
+            <div class="nav-buttons">
+              <button>Settings</button>
+              <button>Preview</button>
+              <button>Publish</button>
+            </div>
+          </div>
+          <div class="screen-content">
+            <div class="templates-panel">
+              <h3>Templates Bank</h3>
+              <div class="template-card">
+                <span class="template-icon">📊</span>
+                <div>
+                  <div class="template-title">Multiple Choice Exam</div>
+                  <div class="template-subtitle">Quick assess</div>
+                </div>
+              </div>
+              <div class="template-card">
+                <span class="template-icon">📄</span>
+                <div>
+                  <div class="template-title">Short Answer Quiz</div>
+                  <div class="template-subtitle">Practice</div>
+                </div>
+              </div>
+              <div class="template-card">
+                <span class="template-icon">📋</span>
+                <div>
+                  <div class="template-title">AI-Generated Assessment</div>
+                  <div class="template-subtitle">Auto create</div>
+                </div>
+              </div>
+            </div>
+            <div class="ai-panel">
+              <h3>AI Assistant</h3>
+              <button class="generate-btn">Generate Questions with AI</button>
+              <div class="ai-options">
+                <input type="text" placeholder="Topic (Mathematics)"/>
+                <select>
+                  <option>Difficulty</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+    </div>
+
+    <!-- Lado derecho - Pasos -->
+    <div class="steps-side">
+      <h2 class="steps-title">{title}</h2>
+      
+      <div class="accordion">
+        <div class="accordion-item" data-step="1">
+          <button class="accordion-header">
+            <div class="step-info">
+              <span class="step-number">PASO 1</span>
+              <span class="step-subtitle">Elige tu plantilla</span>
+            </div>
+            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Selecciona entre nuestras plantillas profesionales diseñadas por expertos en educación. Cada plantilla está optimizada para diferentes tipos de evaluaciones y materias.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" data-step="2">
+          <button class="accordion-header">
+            <div class="step-info">
+              <span class="step-number">PASO 2</span>
+              <span class="step-subtitle">Configura los parámetros</span>
+            </div>
+            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Define el nivel de dificultad, tipo de preguntas, cantidad de ítems y criterios de evaluación. Personaliza cada aspecto según tus necesidades específicas.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" data-step="3">
+          <button class="accordion-header">
+            <div class="step-info">
+              <span class="step-number">PASO 3</span>
+              <span class="step-subtitle">Genera con IA</span>
+            </div>
+            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Nuestra Inteligencia Artificial creará automáticamente preguntas de alta calidad basadas en tus parámetros. El proceso toma solo segundos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" data-step="4">
+          <button class="accordion-header">
+            <div class="step-info">
+              <span class="step-number">PASO 4</span>
+              <span class="step-subtitle">Revisa y edita</span>
+            </div>
+            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Revisa las preguntas generadas y realiza los ajustes necesarios. Puedes editar, eliminar o agregar nuevas preguntas manualmente según lo requieras.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" data-step="5">
+          <button class="accordion-header">
+            <div class="step-info">
+              <span class="step-number">PASO 5</span>
+              <span class="step-subtitle">Exporta y comparte</span>
+            </div>
+            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <p>Descarga tu examen en múltiples formatos (PDF, Word, Excel) o compártelo directamente con tus estudiantes a través de nuestra plataforma.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href={ctaLink} class="cta-button">{ctaText}</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function initAccordion() {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  
+  if (!accordionItems.length) return;
+
+  accordionItems.forEach((item) => {
+    const header = item.querySelector('.accordion-header');
+    
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Cerrar todos los acordeones
+      accordionItems.forEach((otherItem) => {
+        otherItem.classList.remove('active');
+      });
+      
+      // Si el item clickeado no estaba activo, abrirlo
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+}
+
+// Inicializar
+document.addEventListener('astro:page-load', initAccordion);
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAccordion);
+} else {
+  initAccordion();
+}
+</script>

@@ -1,0 +1,154 @@
+  /* ========== BASE STYLES (Mobile First) ========== */
+  .section-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    width: 100%;
+    /* Prevenir overflow horizontal */
+    overflow-wrap: break-word;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Fluido y adaptativo */
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    /* Mejoras para texto largo */
+    word-break: break-word;
+    hyphens: auto;
+    /* Suavizar renderizado */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .section-description {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Tamaño fluido */
+    color: #666;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    /* Mejoras de legibilidad */
+    text-align: center;
+  }
+
+  /* ========== SMALL MOBILE (320px - 480px) ========== */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .section-header {
+      padding: 1.2rem 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 0 0.25rem;
+    }
+  }
+
+  /* ========== MOBILE (481px - 767px) ========== */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .section-header {
+      padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
+      max-width: 500px;
+    }
+  }
+
+  /* ========== TABLET (768px - 1024px) ========== */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .section-header {
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.05rem;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+  }
+
+  /* ========== DESKTOP (1025px - 1440px) ========== */
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    .section-header {
+      padding: 3rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      max-width: 700px;
+      line-height: 1.8;
+    }
+  }
+
+  /* ========== LARGE DESKTOP (>1440px) ========== */
+  @media (min-width: 1441px) {
+    .section-header {
+      padding: 3.5rem 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+    }
+
+    .section-description {
+      font-size: 1.15rem;
+      max-width: 800px;
+    }
+  }
+
+  /* ========== LANDSCAPE ORIENTATION (Móviles horizontales) ========== */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .section-header {
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* ========== ACCESIBILIDAD - Reduce motion ========== */
+  @media (prefers-reduced-motion: reduce) {
+    .section-header,
+    .section-title,
+    .section-description {
+      transition: none;
+    }
+  }
+
+  

@@ -1,0 +1,21 @@
+/** Global.css */
+
+@import "./sections/header.css";
+@import "./sections/description_card.css";
+@import "./sections/carousel.css";
+@import "./sections/hero.css";
+@import "./sections/pasos.css";
+@import "./sections/evaluation.css";
+@import "./sections/plantillas.css";
+@import "./sections/testimonials.css";
+@import "./sections/pf.css";
+@import "./sections/types.css";
+@import "./sections/footer.css";
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}

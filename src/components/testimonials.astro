@@ -1,0 +1,167 @@
+---
+// src/components/TestimonialsSlider.astro
+interface Testimonial {
+  text: string;
+  author: string;
+}
+
+interface Props {
+  testimonials?: Testimonial[];
+  autoplayInterval?: number;
+}
+
+const {
+  autoplayInterval = 5000,
+  testimonials = [
+    {
+      text: '"La automatización aplicada a una operación eficiente, magnifica la eficiencia." Con Examania, no solo creas exámenes, sino que automatizas tu proceso pedagógico. Multiplica tu impacto en el aula.',
+      author: "Bill Gates"
+    },
+    {
+      text: '"La educación es el arma más poderosa que puedes usar para cambiar el mundo." Examania te proporciona las herramientas para transformar la evaluación educativa y potenciar el aprendizaje de cada estudiante.',
+      author: "Nelson Mandela"
+    },
+    {
+      text: '"El objetivo de la educación es la virtud y el deseo de convertirse en un buen ciudadano." Con Examania, crea evaluaciones que no solo miden conocimientos, sino que forman mejores personas.',
+      author: "Platón"
+    },
+    {
+      text: '"La tecnología es solo una herramienta. En términos de motivar a los niños y hacer que trabajen juntos, el profesor es lo más importante." Examania potencia tu labor docente con IA inteligente.',
+      author: "Steve Jobs"
+    },
+    {
+      text: '"El aprendizaje nunca agota la mente." Con Examania, diseña evaluaciones que inspiran el pensamiento crítico y fomentan el amor por el conocimiento continuo en tus estudiantes.',
+      author: "Leonardo da Vinci"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <!-- Icono decorativo -->
+    <div class="code-icon">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M15 10L5 20L15 30M25 10L35 20L25 30" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Área de testimonios -->
+    <div class="testimonial-content">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class={`testimonial-item ${index === 0 ? 'active' : ''}`}
+          data-index={index}
+        >
+          <p class="testimonial-text">{testimonial.text}</p>
+          <p class="testimonial-author">{testimonial.author}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Indicadores de línea -->
+    <div class="testimonial-indicators">
+      {testimonials.map((_, index) => (
+        <button 
+          class={`indicator ${index === 0 ? 'active' : ''}`}
+          data-index={index}
+          aria-label={`Testimonio ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ autoplayInterval }}>
+function initTestimonials() {
+  const indicators = document.querySelectorAll('.indicator');
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  
+  if (!indicators.length || !testimonials.length) return;
+  
+  let currentIndex = 0;
+  let autoplayTimer = null;
+
+  function showTestimonial(index) {
+    // Remover active de todos
+    testimonials.forEach(item => item.classList.remove('active'));
+    indicators.forEach(ind => ind.classList.remove('active'));
+
+    // Agregar active al seleccionado
+    if (testimonials[index] && indicators[index]) {
+      testimonials[index].classList.add('active');
+      indicators[index].classList.add('active');
+      currentIndex = index;
+    }
+  }
+
+  function nextTestimonial() {
+    const next = (currentIndex + 1) % testimonials.length;
+    showTestimonial(next);
+  }
+
+  function startAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+    }
+    autoplayTimer = setInterval(nextTestimonial, autoplayInterval);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  // Event listeners para los indicadores
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showTestimonial(index);
+      stopAutoplay();
+      startAutoplay();
+    });
+
+    // Soporte de teclado
+    indicator.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        indicator.click();
+      }
+    });
+  });
+
+  // Pausar autoplay en hover (solo en desktop)
+  const testimonialsSection = document.querySelector('.testimonials-section');
+  if (testimonialsSection && window.innerWidth > 768) {
+    testimonialsSection.addEventListener('mouseenter', stopAutoplay);
+    testimonialsSection.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Pausar cuando la página no está visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  // Iniciar autoplay
+  startAutoplay();
+
+  // Limpiar al salir
+  return () => {
+    stopAutoplay();
+  };
+}
+
+// Inicializar
+document.addEventListener('astro:page-load', initTestimonials);
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTestimonials);
+} else {
+  initTestimonials();
+}
+</script>

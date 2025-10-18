@@ -1,0 +1,246 @@
+  /* ========== BASE STYLES (Mobile First) ========== */
+  .evaluation-types-section {
+    width: 100%;
+    background: white;
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    border-top: 3px solid #4a9fd8;
+    border-bottom: 3px solid #4a9fd8;
+    overflow: hidden;
+  }
+
+  .evaluation-types-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* ========== TITLE ========== */
+  .evaluation-types-title {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 clamp(1.5rem, 4vw, 3rem) 0;
+    padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 2rem);
+    border: 3px dotted #4a9fd8;
+    border-radius: clamp(6px, 1vw, 8px);
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* ========== GRID ========== */
+  .types-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(0.8rem, 2vw, 1.5rem);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* ========== BUTTONS ========== */
+  .type-button {
+    background: #1e5f7d;
+    color: white;
+    border: none;
+    padding: clamp(0.9rem, 2vw, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
+    border-radius: clamp(6px, 1vw, 8px);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(30, 95, 125, 0.2);
+    text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .type-button:hover {
+    background: #2c7a9e;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(30, 95, 125, 0.3);
+  }
+
+  .type-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 95, 125, 0.25);
+  }
+
+  .type-button:focus-visible {
+    outline: 3px solid #00d4ff;
+    outline-offset: 2px;
+  }
+
+  /* ========== SMALL MOBILE (320px - 480px) ========== */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .evaluation-types-section {
+      padding: 2rem 0;
+    }
+
+    .evaluation-types-container {
+      padding: 0 0.75rem;
+    }
+
+    .evaluation-types-title {
+      font-size: 1.15rem;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+
+    .types-grid {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .type-button {
+      padding: 0.85rem 0.9rem;
+      font-size: 0.82rem;
+    }
+  }
+
+  /* ========== MOBILE (481px - 600px) ========== */
+  @media (min-width: 481px) and (max-width: 600px) {
+    .evaluation-types-section {
+      padding: 2.5rem 0;
+    }
+
+    .evaluation-types-container {
+      padding: 0 1rem;
+    }
+
+    .evaluation-types-title {
+      font-size: 1.25rem;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.8rem;
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+
+    .types-grid {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .type-button {
+      padding: 0.95rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  /* ========== TABLET SMALL (601px - 768px) ========== */
+  @media (min-width: 601px) and (max-width: 768px) {
+    .evaluation-types-section {
+      padding: 3rem 0;
+    }
+
+    .evaluation-types-container {
+      padding: 0 1.5rem;
+    }
+
+    .evaluation-types-title {
+      font-size: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .types-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .type-button {
+      padding: 1rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* ========== TABLET LARGE (769px - 900px) ========== */
+  @media (min-width: 769px) and (max-width: 900px) {
+    .evaluation-types-container {
+      padding: 0 1.5rem;
+    }
+
+    .evaluation-types-title {
+      font-size: 1.7rem;
+    }
+
+    .types-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+  }
+
+  /* ========== DESKTOP SMALL (901px - 1200px) ========== */
+  @media (min-width: 901px) and (max-width: 1200px) {
+    .evaluation-types-container {
+      padding: 0 2rem;
+    }
+
+    .types-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.4rem;
+    }
+  }
+
+  /* ========== DESKTOP LARGE (>1200px) ========== */
+  @media (min-width: 1201px) {
+    .evaluation-types-container {
+      padding: 0 2rem;
+    }
+
+    .types-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  /* ========== LANDSCAPE MODE ========== */
+  @media (max-height: 600px) and (orientation: landscape) {
+    .evaluation-types-section {
+      padding: 1.5rem 0;
+    }
+
+    .evaluation-types-title {
+      font-size: 1.3rem;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .types-grid {
+      gap: 0.8rem;
+    }
+
+    .type-button {
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    @media (min-width: 768px) {
+      .types-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+  }
+
+  /* ========== ACCESIBILIDAD ========== */
+  @media (prefers-reduced-motion: reduce) {
+    .type-button {
+      transition: background 0.1s ease;
+    }
+
+    .type-button:hover,
+    .type-button:active {
+      transform: none;
+    }
+  }
+

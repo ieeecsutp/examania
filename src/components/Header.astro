@@ -1,0 +1,138 @@
+<header class="site-header" role="banner" id="main-header">
+  <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true" />
+
+  <div class="site-header__inner">
+    <div class="brand">
+      <img src="/assets/images/logo.svg" alt="Examania Logo" class="brand__logo" />
+      <a href="/" class="brand__title">Examania</a>
+    </div>
+
+    <nav class="nav-desktop" aria-label="Menú principal">
+      <ul>
+        <li><a href="#about">Acerca de Nosotros</a></li>
+        <li><a href="#ai">Asistente IA</a></li>
+        <li><a href="#templates">Plantillas</a></li>
+        <li><a href="#login">Iniciar sesión</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a 
+        class="github-link" 
+        href="https://github.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="Repositorio GitHub"
+      >
+        <img src="/assets/images/github.svg" alt="" class="icon icon--github" />
+      </a>
+
+      <label 
+        for="nav-toggle" 
+        class="hamburger" 
+        role="button" 
+        aria-label="Abrir menú" 
+        title="Abrir menú" 
+        tabindex="0"
+      >
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </label>
+    </div>
+  </div>
+
+  <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
+
+  <nav class="mobile-slide" aria-label="Menú móvil">
+    <div class="mobile-slide__inner">
+      <h3 class="mobile-slide__title">Menú</h3>
+      <ul>
+        <li><a href="#about">Acerca de Nosotros</a></li>
+        <li><a href="#ai">Asistente IA</a></li>
+        <li><a href="#templates">Plantillas</a></li>
+        <li><a href="#login">Iniciar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Script para manejar el scroll y cerrar menú móvil
+  const header = document.getElementById('main-header');
+  const navToggle = document.getElementById('nav-toggle') as HTMLInputElement;
+  const mobileLinks = document.querySelectorAll('.mobile-slide a');
+  let lastScrollTop = 0;
+  let ticking = false;
+
+  // Función para actualizar el estado del header al hacer scroll
+  function updateHeader() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Agregar clase "scrolled" cuando se hace scroll
+    if (scrollTop > 10) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+    
+    lastScrollTop = scrollTop;
+    ticking = false;
+  }
+
+  // Optimización con requestAnimationFrame
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }
+
+  // Event listener para scroll
+  window.addEventListener('scroll', requestTick, { passive: true });
+
+  // Cerrar menú móvil al hacer clic en un enlace
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navToggle) {
+        navToggle.checked = false;
+      }
+    });
+  });
+
+  // Cerrar menú con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navToggle?.checked) {
+      navToggle.checked = false;
+    }
+  });
+
+  // Accesibilidad: Activar hamburger con Enter o Space
+  const hamburger = document.querySelector('.hamburger');
+  hamburger?.addEventListener('keypress', (e) => {
+    const event = e as KeyboardEvent;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (navToggle) {
+        navToggle.checked = !navToggle.checked;
+      }
+    }
+  });
+
+  // Prevenir scroll del body cuando el menú móvil está abierto
+  navToggle?.addEventListener('change', () => {
+    if (navToggle.checked) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Limpiar al cambiar de página (importante para Astro)
+  document.addEventListener('astro:before-swap', () => {
+    if (navToggle) {
+      navToggle.checked = false;
+    }
+    document.body.style.overflow = '';
+  });
+</script>

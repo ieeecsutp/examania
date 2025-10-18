@@ -1,5 +1,16 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    server: {
+      fs: {
+        // Permitir acceso a la carpeta del usuario y node_modules global
+        allow: [
+          './',
+          'C:/Users/AXELL/node_modules',
+          'C:/Users/AXELL/Desktop/EXAMANIA',
+        ],
+      },
+    },
+  },
+});

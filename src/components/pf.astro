@@ -1,0 +1,94 @@
+<section class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-title">Preguntas Frecuentes</h2>
+
+    <div class="faq-list">
+      <!-- Pregunta 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="question-text">¿Qué es un modelo de evaluación?</span>
+          <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Un modelo de evaluación es una estructura predefinida que establece los criterios, formato y tipos de preguntas que se utilizarán para medir el conocimiento de los estudiantes. En Examania, nuestros modelos están potenciados por IA para garantizar evaluaciones equilibradas y efectivas que se adaptan a diferentes niveles educativos y objetivos de aprendizaje.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="question-text">¿Cuál es la diferencia entre un examen tradicional y un modelo de evaluación inteligente?</span>
+          <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Un examen tradicional requiere que el docente cree manualmente cada pregunta, lo cual consume mucho tiempo. Un modelo de evaluación inteligente utiliza Inteligencia Artificial para generar preguntas relevantes basándose en parámetros específicos como nivel de dificultad, temas y competencias. Esto reduce el tiempo de creación de horas a minutos, manteniendo la calidad y personalización.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="question-text">¿Cuál es la finalidad de un modelo de evaluación en Examania?</span>
+          <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>La finalidad es facilitar el proceso de creación de evaluaciones de calidad, permitiendo a los educadores enfocarse en lo más importante: la enseñanza. Los modelos de Examania ayudan a estandarizar evaluaciones, asegurar la cobertura completa del contenido, variar los niveles de dificultad y generar múltiples versiones de exámenes para evitar plagio, todo mientras se ahorra tiempo valioso.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="question-text">¿Por qué es importante crear exámenes con Examania?</span>
+          <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Examania revoluciona la creación de evaluaciones al combinar la experiencia pedagógica con tecnología de IA. Esto garantiza exámenes profesionales y bien estructurados en una fracción del tiempo que tomaría hacerlo manualmente. Además, nuestra plataforma permite colaboración en equipo, uso de plantillas probadas, y genera automáticamente bancos de preguntas que puedes reutilizar y adaptar según necesites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function initFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (!faqItems.length || !faqQuestions.length) return;
+
+  faqQuestions.forEach((question, index) => {
+    question.addEventListener('click', () => {
+      const currentItem = faqItems[index];
+      const isActive = currentItem.classList.contains('active');
+      
+      // Cerrar todos los items
+      faqItems.forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Si el item clickeado no estaba activo, abrirlo
+      if (!isActive) {
+        currentItem.classList.add('active');
+      }
+    });
+  });
+}
+
+// Inicializar
+document.addEventListener('astro:page-load', initFAQ);
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFAQ);
+} else {
+  initFAQ();
+}
+</script>
