@@ -1,16 +1,26 @@
 /** Global.css */
 
-@import "./sections/header.css";
-@import "./sections/description_card.css";
+@import "./sections/header_style.css";
+
+@import "./sections/card_style.css";
+
 @import "./sections/carousel.css";
-@import "./sections/hero.css";
-@import "./sections/pasos.css";
-@import "./sections/evaluation.css";
-@import "./sections/plantillas.css";
+
+@import "./sections/pasos_style.css";
+
+@import "./sections/evaluation_style.css";
+
+@import "./sections/plantillas_style.css";
+
 @import "./sections/testimonials.css";
-@import "./sections/pf.css";
-@import "./sections/types.css";
-@import "./sections/footer.css";
+
+@import "./sections/preg-frec_style.css";
+
+@import "./sections/types_style.css";
+
+@import "./sections/footer_style.css";
+
+@import "./sections/primary_style.css";
 
 body, html {
   margin: 0;
