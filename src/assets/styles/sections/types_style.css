@@ -3,8 +3,6 @@
     width: 100%;
     background: white;
     padding: clamp(2rem, 5vw, 4rem) 0;
-    border-top: 3px solid #4a9fd8;
-    border-bottom: 3px solid #4a9fd8;
     overflow: hidden;
   }
 
@@ -12,6 +10,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    
   }
 
   /* ========== TITLE ========== */
@@ -22,8 +21,6 @@
     text-align: center;
     margin: 0 0 clamp(1.5rem, 4vw, 3rem) 0;
     padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 2rem);
-    border: 3px dotted #4a9fd8;
-    border-radius: clamp(6px, 1vw, 8px);
     display: inline-block;
     width: auto;
     max-width: 100%;
@@ -45,11 +42,11 @@
 
   /* ========== BUTTONS ========== */
   .type-button {
+    border-radius: 1rem;
     background: #1e5f7d;
     color: white;
     border: none;
     padding: clamp(0.9rem, 2vw, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
-    border-radius: clamp(6px, 1vw, 8px);
     font-size: clamp(0.85rem, 2vw, 0.95rem);
     font-weight: 600;
     cursor: pointer;
