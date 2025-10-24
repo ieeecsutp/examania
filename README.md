@@ -100,7 +100,7 @@ Sigue estos pasos para poner en marcha el proyecto:
     ```
 
 ## Estructura del archivo
-
+```bash
 EXAMANIA-1/
 ├── .astro/
 ├── .vscode/
@@ -151,3 +151,4 @@ EXAMANIA-1/
 ├── package.json
 ├── README.md
 └── tsconfig.json
+```
