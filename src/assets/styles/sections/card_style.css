@@ -4,7 +4,6 @@
     padding: 1.5rem 1rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid #eee;
-    width: 100%;
     /* Prevenir overflow horizontal */
     overflow-wrap: break-word;
   }

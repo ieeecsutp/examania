@@ -8,7 +8,7 @@ import Splide from '@splidejs/splide';
     if (carouselElement && !carouselElement.classList.contains('is-initialized')) {
       const splide = new Splide('#hero-splide', {
         type: 'loop',
-        perPage: 1,
+        perPage: 3,
         autoplay: true,
         interval: 4000,
         pauseOnHover: true,
@@ -16,11 +16,14 @@ import Splide from '@splidejs/splide';
         arrows: true,
         pagination: true,
         speed: 800,
-        gap: '2rem',
+        gap: '1rem',
         padding: { left: 0, right: 0 },
         breakpoints: {
           768: {
-            gap: '1rem',
+            perPage: 2,
+          },
+          481: {
+            perPage: 1,
           }
         }
       });
