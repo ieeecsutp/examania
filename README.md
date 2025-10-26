@@ -122,19 +122,19 @@ EXAMANIA-1/
 │   │   └── images/
 │   │       └── img_context.png
 │   ├── components/
-│   │   ├── card.astro
-│   │   ├── evaluation.astro
+│   │   ├── Card.astro
+│   │   ├── Evaluation.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── HeroCarousel.astro
-│   │   ├── pasos.astro
-│   │   ├── plantillas.astro
-│   │   ├── preg-frec.astro
-│   │   ├── primary.astro
-│   │   ├── testimonials.astro
-│   │   └── types.astro
+│   │   ├── Steps.astro
+│   │   ├── Templates.astro
+│   │   ├── FAQ.astro
+│   │   ├── Primary.astro
+│   │   ├── Testimonials.astro
+│   │   └── Types.astro
 │   ├── layouts/
-│   │   └── Base_layout.astro
+│   │   └── BaseLayout.astro
 │   ├── pages/
 │   │   └── index.astro
 │   ├── scripts/
@@ -142,7 +142,7 @@ EXAMANIA-1/
 │   └── styles/
 │       ├── sections/
 │       │   ├── primary_style.css
-│       │   ├── testimonials.css
+│       │   ├── testimonials_style.css
 │       │   └── types_style.css
 │       └── global.css
 ├── .gitignore

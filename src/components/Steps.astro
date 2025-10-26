@@ -9,7 +9,7 @@ interface Props {
 const {
   title = "Cómo crear el modelo",
   ctaText = "Crear un examen online",
-  ctaLink = "#"
+  ctaLink = "#",
 } = Astro.props;
 ---
 
@@ -59,7 +59,7 @@ const {
               <h3>AI Assistant</h3>
               <button class="generate-btn">Generate Questions with AI</button>
               <div class="ai-options">
-                <input type="text" placeholder="Topic (Mathematics)"/>
+                <input type="text" placeholder="Topic (Mathematics)" />
                 <select>
                   <option>Difficulty</option>
                 </select>
@@ -74,7 +74,7 @@ const {
     <!-- Lado derecho - Pasos -->
     <div class="steps-side">
       <h2 class="steps-title">{title}</h2>
-      
+
       <div class="accordion">
         <div class="accordion-item" data-step="1">
           <button class="accordion-header">
@@ -82,12 +82,24 @@ const {
               <span class="step-number">PASO 1</span>
               <span class="step-subtitle">Elige tu plantilla</span>
             </div>
-            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              class="chevron"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="accordion-content">
-            <p>Abre la plataforma Examania en tu navegador. Una vez dentro, serás recibido por el panel de control, listo para iniciar la creación de tu próxima evaluación.</p>
+            <p>
+              Abre la plataforma Examania en tu navegador. Una vez dentro, serás
+              recibido por el panel de control, listo para iniciar la creación
+              de tu próxima evaluación.
+            </p>
           </div>
         </div>
 
@@ -97,12 +109,28 @@ const {
               <span class="step-number">PASO 2</span>
               <span class="step-subtitle">Configura los parámetros</span>
             </div>
-            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              class="chevron"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="accordion-content">
-            <p>Explora nuestra vasta "Biblioteca de Plantillas", donde podrás elegir entre diversos tipos de examen (opción múltiple, desarrollo, falso/verdadero, etc.) o, si lo prefieres, utiliza el Asistente de IA para generar un borrador inicial de preguntas basado en tu tema y nivel deseado. Cada plantilla es completamente personalizable y adaptable a tus necesidades, o puedes empezar un examen completamente desde cero.</p>
+            <p>
+              Explora nuestra vasta "Biblioteca de Plantillas", donde podrás
+              elegir entre diversos tipos de examen (opción múltiple,
+              desarrollo, falso/verdadero, etc.) o, si lo prefieres, utiliza el
+              Asistente de IA para generar un borrador inicial de preguntas
+              basado en tu tema y nivel deseado. Cada plantilla es completamente
+              personalizable y adaptable a tus necesidades, o puedes empezar un
+              examen completamente desde cero.
+            </p>
           </div>
         </div>
 
@@ -112,12 +140,28 @@ const {
               <span class="step-number">PASO 3</span>
               <span class="step-subtitle">Genera con IA</span>
             </div>
-            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              class="chevron"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="accordion-content">
-            <p>Rellena cada sección de tu examen con preguntas, respuestas, puntos y criterios de evaluación. Con la ayuda del Asistente de IA, puedes generar preguntas adicionales o modificar las existentes con un solo clic. Añade fácilmente nuevos bloques de texto, imágenes o elementos multimedia para enriquecer el contenido y alinear tu evaluación con los objetivos de aprendizaje.</p>
+            <p>
+              Rellena cada sección de tu examen con preguntas, respuestas,
+              puntos y criterios de evaluación. Con la ayuda del Asistente de
+              IA, puedes generar preguntas adicionales o modificar las
+              existentes con un solo clic. Añade fácilmente nuevos bloques de
+              texto, imágenes o elementos multimedia para enriquecer el
+              contenido y alinear tu evaluación con los objetivos de
+              aprendizaje.
+            </p>
           </div>
         </div>
 
@@ -127,12 +171,27 @@ const {
               <span class="step-number">PASO 4</span>
               <span class="step-subtitle">Revisa y edita</span>
             </div>
-            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              class="chevron"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="accordion-content">
-            <p>Haz que tu examen sea visualmente atractivo y claro para tus estudiantes. Juega con estilos de fuente, colores, formatos y diseños para que el examen sea único y profesional. Sube tus propias imágenes, gráficos o utiliza los recursos visuales de nuestra mediateca para complementar tus preguntas y hacerlas más dinámicas.</p>
+            <p>
+              Haz que tu examen sea visualmente atractivo y claro para tus
+              estudiantes. Juega con estilos de fuente, colores, formatos y
+              diseños para que el examen sea único y profesional. Sube tus
+              propias imágenes, gráficos o utiliza los recursos visuales de
+              nuestra mediateca para complementar tus preguntas y hacerlas más
+              dinámicas.
+            </p>
           </div>
         </div>
 
@@ -142,12 +201,27 @@ const {
               <span class="step-number">PASO 5</span>
               <span class="step-subtitle">Exporta y comparte</span>
             </div>
-            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              class="chevron"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="accordion-content">
-            <p>Finaliza tu examen en línea y descárgalo fácilmente como PDF, DOCX o CSV de alta resolución. Compártelo digitalmente a través de enlaces directos, correo electrónico o integrándolo en tu Sistema de Gestión del Aprendizaje (LMS). También puedes imprimir una copia para tus clases o incorporarlo en presentaciones académicas o informes institucionales.</p>
+            <p>
+              Finaliza tu examen en línea y descárgalo fácilmente como PDF, DOCX
+              o CSV de alta resolución. Compártelo digitalmente a través de
+              enlaces directos, correo electrónico o integrándolo en tu Sistema
+              de Gestión del Aprendizaje (LMS). También puedes imprimir una
+              copia para tus clases o incorporarlo en presentaciones académicas
+              o informes institucionales.
+            </p>
           </div>
         </div>
       </div>
@@ -158,38 +232,38 @@ const {
 </section>
 
 <script>
-function initAccordion() {
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  
-  if (!accordionItems.length) return;
+  function initAccordion() {
+    const accordionItems = document.querySelectorAll(".accordion-item");
 
-  accordionItems.forEach((item) => {
-    const header = item.querySelector('.accordion-header');
-    
-    if (!header) return;
+    if (!accordionItems.length) return;
 
-    header.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      
-      // Cerrar todos los acordeones
-      accordionItems.forEach((otherItem) => {
-        otherItem.classList.remove('active');
+    accordionItems.forEach((item) => {
+      const header = item.querySelector(".accordion-header");
+
+      if (!header) return;
+
+      header.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        // Cerrar todos los acordeones
+        accordionItems.forEach((otherItem) => {
+          otherItem.classList.remove("active");
+        });
+
+        // Si el item clickeado no estaba activo, abrirlo
+        if (!isActive) {
+          item.classList.add("active");
+        }
       });
-      
-      // Si el item clickeado no estaba activo, abrirlo
-      if (!isActive) {
-        item.classList.add('active');
-      }
     });
-  });
-}
+  }
 
-// Inicializar
-document.addEventListener('astro:page-load', initAccordion);
+  // Inicializar
+  document.addEventListener("astro:page-load", initAccordion);
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAccordion);
-} else {
-  initAccordion();
-}
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAccordion);
+  } else {
+    initAccordion();
+  }
 </script>

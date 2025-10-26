@@ -128,7 +128,7 @@
   }
 
   .template-title {
-    color: white;
+    color: #888;
     font-size: clamp(0.65rem, 1.5vw, 0.75rem);
     font-weight: 600;
   }

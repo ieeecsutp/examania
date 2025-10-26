@@ -14,20 +14,44 @@ interface Props {
 const {
   title = "Tipos de Evaluaciones y Formatos",
   types = [
-    { id: "comparativos", name: "Cuadros comparativos", link: "/tipos/comparativos" },
+    {
+      id: "comparativos",
+      name: "Cuadros comparativos",
+      link: "/tipos/comparativos",
+    },
     { id: "texto", name: "Texto", link: "/tipos/texto" },
     { id: "multiple", name: "Opción múltiple", link: "/tipos/multiple" },
-    { id: "desarrollo", name: "Exámenes de desarrollo", link: "/tipos/desarrollo" },
+    {
+      id: "desarrollo",
+      name: "Exámenes de desarrollo",
+      link: "/tipos/desarrollo",
+    },
     { id: "tablas", name: "Tablas", link: "/tipos/tablas" },
-    { id: "verdadero-falso", name: "Verdadero/Falso", link: "/tipos/verdadero-falso" },
-    { id: "rellenar", name: "Prácticas de rellenar espacios", link: "/tipos/rellenar" },
+    {
+      id: "verdadero-falso",
+      name: "Verdadero/Falso",
+      link: "/tipos/verdadero-falso",
+    },
+    {
+      id: "rellenar",
+      name: "Prácticas de rellenar espacios",
+      link: "/tipos/rellenar",
+    },
     { id: "temas", name: "Evaluaciones por temas", link: "/tipos/temas" },
     { id: "mapas", name: "Mapas Conceptuales", link: "/tipos/mapas" },
     { id: "cortas", name: "Preguntas cortas", link: "/tipos/cortas" },
     { id: "casos", name: "Creación de casos", link: "/tipos/casos" },
-    { id: "diagramas", name: "Diagramas de afinidad", link: "/tipos/diagramas" },
-    { id: "emparejamiento", name: "Emparejamiento", link: "/tipos/emparejamiento" }
-  ]
+    {
+      id: "diagramas",
+      name: "Diagramas de afinidad",
+      link: "/tipos/diagramas",
+    },
+    {
+      id: "emparejamiento",
+      name: "Emparejamiento",
+      link: "/tipos/emparejamiento",
+    },
+  ],
 } = Astro.props;
 ---
 
@@ -36,48 +60,50 @@ const {
     <h2 class="evaluation-types-title">{title}</h2>
 
     <div class="types-grid">
-      {types.map((type) => (
-        <button 
-          class="type-button" 
-          data-type-id={type.id}
-          data-link={type.link}
-        >
-          {type.name}
-        </button>
-      ))}
+      {
+        types.map((type) => (
+          <button
+            class="type-button"
+            data-type-id={type.id}
+            data-link={type.link}
+          >
+            {type.name}
+          </button>
+        ))
+      }
     </div>
   </div>
 </section>
 
 <script>
-function initEvaluationTypes() {
-  const typeButtons = document.querySelectorAll('.type-button');
-  
-  if (!typeButtons.length) return;
+  function initEvaluationTypes() {
+    const typeButtons = document.querySelectorAll(".type-button");
 
-  typeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const typeName = button.textContent.trim();
-      console.log('Tipo seleccionado:', typeName);
-      
-      // Aquí puedes agregar la funcionalidad que desees
-      // Por ejemplo: filtrar contenido, abrir un modal, redirigir, etc.
-      
-      // Ejemplo de feedback visual
-      (button as HTMLElement).style.background = '#00d4ff';
-      setTimeout(() => {
-      (button as HTMLElement).style.background = '#1e5f7d';
-      }, 200);
+    if (!typeButtons.length) return;
+
+    typeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const typeName = button.textContent.trim();
+        console.log("Tipo seleccionado:", typeName);
+
+        // Aquí puedes agregar la funcionalidad que desees
+        // Por ejemplo: filtrar contenido, abrir un modal, redirigir, etc.
+
+        // Ejemplo de feedback visual
+        (button as HTMLElement).style.background = "#00d4ff";
+        setTimeout(() => {
+          (button as HTMLElement).style.background = "#1e5f7d";
+        }, 200);
+      });
     });
-  });
-}
+  }
 
-// Inicializar
-document.addEventListener('astro:page-load', initEvaluationTypes);
+  // Inicializar
+  document.addEventListener("astro:page-load", initEvaluationTypes);
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initEvaluationTypes);
-} else {
-  initEvaluationTypes();
-}
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initEvaluationTypes);
+  } else {
+    initEvaluationTypes();
+  }
 </script>

@@ -1,46 +1,42 @@
 ---
+import PF from "../components/FAQ.astro";
+import Types from "../components/Types.astro";
+import Plant from "../components/Templates.astro";
+import Primary from "../components/Primary.astro";
+import SectionHeader from "../components/Card.astro";
+import StepsAccordion from "../components/Steps.astro";
+import Evaluation from "../components/Evaluation.astro";
+import Testimonials from "../components/Testimonials.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
 
-import Layout from '../layouts/Base_layout.astro';
-import HeroCarousel from '../components/HeroCarousel.astro';
-import SectionHeader from '../components/card.astro';
-import StepsAccordion from '../components/pasos.astro';
-import Evaluation from '../components/evaluation.astro';
-import Plant from '../components/plantillas.astro';
-import Testimonials from '../components/testimonials.astro';
-import PF from '../components/preg-frec.astro';
-import Types from '../components/types.astro';
-import Primary from '../components/primary.astro';
-
+import Layout from "../layouts/BaseLayout.astro";
 ---
+
 <!-- index.astro -->
-
 <Layout title="Landing page - Examania">
+  <Primary />
 
-    <Primary />
+  <SectionHeader
+    titulo="Características de creador de modelo  Examania"
+    descripcion="Desarrolla tus evaluaciones de forma precisa, concisa y visualmente estratégica. Evalúa el conocimiento y las habilidades de tus estudiantes identificando objetivos de aprendizaje, niveles de dificultad, tipos de preguntas y criterios de calificación. Esta tarea será más fácil con ayuda de las plantillas impulsadas por Inteligencia Artificial de nuestro creador de exámenes en línea, Examania. Puedes generar preguntas de forma automática, ajustar el formato con tu equipo y personalizarlo con elementos de diseño y herramientas interesantes."
+  />
 
+  <HeroCarousel />
 
-    <SectionHeader
-        titulo="Características de creador de modelo  Examania"
-        descripcion="Desarrolla tus evaluaciones de forma precisa, concisa y visualmente estratégica. Evalúa el conocimiento y las habilidades de tus estudiantes identificando objetivos de aprendizaje, niveles de dificultad, tipos de preguntas y criterios de calificación. Esta tarea será más fácil con ayuda de las plantillas impulsadas por Inteligencia Artificial de nuestro creador de exámenes en línea, Examania. Puedes generar preguntas de forma automática, ajustar el formato con tu equipo y personalizarlo con elementos de diseño y herramientas interesantes."
-    />
+  <SectionHeader
+    titulo="¿Qué es Examania y su Creador de Evaluaciones?"
+    descripcion="Examania es un marco visual e inteligente que identifica y organiza todos los factores que afectan a tu proceso de evaluación en un documento de una sola interfaz. En comparación con la creación manual tradicional de exámenes, Examania trata el desarrollo y la estructuración de una evaluación como un ejercicio conciso, visual y asistido por Inteligencia Artificial."
+  />
 
-    <HeroCarousel />
+  <StepsAccordion />
 
-    <SectionHeader
-        titulo="¿Qué es Examania y su Creador de Evaluaciones?"
-        descripcion="Examania es un marco visual e inteligente que identifica y organiza todos los factores que afectan a tu proceso de evaluación en un documento de una sola interfaz. En comparación con la creación manual tradicional de exámenes, Examania trata el desarrollo y la estructuración de una evaluación como un ejercicio conciso, visual y asistido por Inteligencia Artificial."
-    />
+  <Evaluation />
 
+  <Plant />
 
-    <StepsAccordion />
+  <Testimonials />
 
-    <Evaluation />
+  <PF />
 
-    <Plant />
-
-    <Testimonials />
-
-    <PF />
-
-    <Types />
+  <Types />
 </Layout>

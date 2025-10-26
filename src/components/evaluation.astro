@@ -7,14 +7,14 @@ interface Props {
   paragraphs?: string[];
 }
 
-const { 
-  imageSrc = "public/img_2.png",
+const {
+  imageSrc = "/img_2.png",
   imageAlt = "Examania Platform",
   title = "Crea Evaluaciones Estratégicas y Completas con Examania",
   paragraphs = [
     "Evalúa el conocimiento de tus estudiantes clasificando eficientemente todos los posibles factores implicados en una evaluación efectiva. Utiliza el creador de exámenes de Examania para establecer un marco que te prepare para el éxito educativo. Ya sea que necesites una evaluación diagnóstica, formativa o sumativa, merece la pena identificar qué mantendrá tu concepto pedagógico competitivo y relevante a largo plazo.",
-    "Elige una plantilla, personaliza los cuadros de texto con tus preguntas y deja que nuestra Inteligencia Artificial te asista en la generación de contenido. No solo podrás evaluar en qué punto del aprendizaje se encuentran tus estudiantes, sino que también te familiarizarás completamente con el proceso de creación de exámenes de alta calidad."
-  ]
+    "Elige una plantilla, personaliza los cuadros de texto con tus preguntas y deja que nuestra Inteligencia Artificial te asista en la generación de contenido. No solo podrás evaluar en qué punto del aprendizaje se encuentran tus estudiantes, sino que también te familiarizarás completamente con el proceso de creación de exámenes de alta calidad.",
+  ],
 } = Astro.props;
 ---
 
@@ -23,18 +23,21 @@ const {
     <!-- Lado izquierdo - Imagen del mockup -->
     <div class="mockup-side">
       <div class="mockup-wrapper">
-        <img src={imageSrc} alt={imageAlt} class="mockup-image" loading="lazy" />
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          class="mockup-image"
+          loading="lazy"
+        />
       </div>
     </div>
 
     <!-- Lado derecho - Contenido de texto -->
     <div class="content-side">
       <h2 class="section-title">{title}</h2>
-      
+
       <div class="description-text">
-        {paragraphs.map(paragraph => (
-          <p>{paragraph}</p>
-        ))}
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
     </div>
   </div>

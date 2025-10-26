@@ -4,23 +4,25 @@
 
 @import "./sections/card_style.css";
 
-@import "./sections/carousel.css";
+@import "./sections/carousel_style.css";
 
-@import "./sections/pasos_style.css";
+@import "./sections/steps_style.css";
 
 @import "./sections/evaluation_style.css";
 
-@import "./sections/plantillas_style.css";
+@import "./sections/templates_style.css";
 
 @import "./sections/testimonials.css";
 
-@import "./sections/preg-frec_style.css";
+@import "./sections/faq_style.css";
 
 @import "./sections/types_style.css";
 
 @import "./sections/footer_style.css";
 
 @import "./sections/primary_style.css";
+
+@import "./sections/scroll_to_top_style.css";
 
 body, html {
   margin: 0;

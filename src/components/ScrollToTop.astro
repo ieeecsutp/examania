@@ -1,0 +1,70 @@
+---
+// src/components/ScrollToTop.astro
+interface Props {
+  showAfter?: number; // Píxeles de scroll antes de mostrar el botón
+}
+
+const { showAfter = 300 } = Astro.props;
+---
+
+<button
+  id="scroll-to-top"
+  class="scroll-to-top"
+  aria-label="Volver arriba"
+  data-show-after={showAfter}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M12 19V5"></path>
+    <path d="M5 12l7-7 7 7"></path>
+  </svg>
+</button>
+
+<script>
+  function initScrollToTop() {
+    const button = document.getElementById("scroll-to-top");
+    if (!button) return;
+
+    const showAfter = parseInt(button.getAttribute("data-show-after") || "300");
+
+    function toggleButton() {
+      if (!button) return;
+
+      if (window.scrollY > showAfter) {
+        button.classList.add("visible");
+      } else {
+        button.classList.remove("visible");
+      }
+    }
+
+    function scrollToTop(e: Event) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    window.addEventListener("scroll", toggleButton, { passive: true });
+    button.addEventListener("click", scrollToTop);
+
+    toggleButton();
+  }
+
+  document.addEventListener("astro:page-load", initScrollToTop);
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initScrollToTop);
+  } else {
+    initScrollToTop();
+  }
+</script>

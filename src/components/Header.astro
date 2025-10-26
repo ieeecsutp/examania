@@ -1,9 +1,14 @@
 <header class="site-header" role="banner" id="main-header">
-  <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true" />
+  <input
+    id="nav-toggle"
+    class="nav-toggle"
+    type="checkbox"
+    aria-hidden="true"
+  />
 
   <div class="site-header__inner">
     <div class="brand">
-      <img src="public/logo.png" alt="Examania Logo" class="brand__logo" />
+      <img src="/logo.png" alt="Examania Logo" class="brand__logo" />
       <a href="/" class="brand__title">Examania</a>
     </div>
 
@@ -17,22 +22,36 @@
     </nav>
 
     <div class="actions">
-      <a 
-        class="github-link" 
-        href="https://github.com" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        class="github-link"
+        href="https://github.com/ieeecsutp/examania/tree/main"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Repositorio GitHub"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-github-icon lucide-github"
+          ><path
+            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+          ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+        >
       </a>
 
-      <label 
-        for="nav-toggle" 
-        class="hamburger" 
-        role="button" 
-        aria-label="Abrir menú" 
-        title="Abrir menú" 
+      <label
+        for="nav-toggle"
+        class="hamburger"
+        role="button"
+        aria-label="Abrir menú"
+        title="Abrir menú"
         tabindex="0"
       >
         <span class="bar" aria-hidden="true"></span>
@@ -59,23 +78,23 @@
 
 <script>
   // Script para manejar el scroll y cerrar menú móvil
-  const header = document.getElementById('main-header');
-  const navToggle = document.getElementById('nav-toggle') as HTMLInputElement;
-  const mobileLinks = document.querySelectorAll('.mobile-slide a');
+  const header = document.getElementById("main-header");
+  const navToggle = document.getElementById("nav-toggle") as HTMLInputElement;
+  const mobileLinks = document.querySelectorAll(".mobile-slide a");
   let lastScrollTop = 0;
   let ticking = false;
 
   // Función para actualizar el estado del header al hacer scroll
   function updateHeader() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     // Agregar clase "scrolled" cuando se hace scroll
     if (scrollTop > 10) {
-      header?.classList.add('scrolled');
+      header?.classList.add("scrolled");
     } else {
-      header?.classList.remove('scrolled');
+      header?.classList.remove("scrolled");
     }
-    
+
     lastScrollTop = scrollTop;
     ticking = false;
   }
@@ -89,11 +108,11 @@
   }
 
   // Event listener para scroll
-  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener("scroll", requestTick, { passive: true });
 
   // Cerrar menú móvil al hacer clic en un enlace
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
       if (navToggle) {
         navToggle.checked = false;
       }
@@ -101,17 +120,17 @@
   });
 
   // Cerrar menú con tecla Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navToggle?.checked) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navToggle?.checked) {
       navToggle.checked = false;
     }
   });
 
   // Accesibilidad: Activar hamburger con Enter o Space
-  const hamburger = document.querySelector('.hamburger');
-  hamburger?.addEventListener('keypress', (e) => {
+  const hamburger = document.querySelector(".hamburger");
+  hamburger?.addEventListener("keypress", (e) => {
     const event = e as KeyboardEvent;
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       if (navToggle) {
         navToggle.checked = !navToggle.checked;
@@ -120,19 +139,19 @@
   });
 
   // Prevenir scroll del body cuando el menú móvil está abierto
-  navToggle?.addEventListener('change', () => {
+  navToggle?.addEventListener("change", () => {
     if (navToggle.checked) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
   });
 
   // Limpiar al cambiar de página (importante para Astro)
-  document.addEventListener('astro:before-swap', () => {
+  document.addEventListener("astro:before-swap", () => {
     if (navToggle) {
       navToggle.checked = false;
     }
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   });
 </script>

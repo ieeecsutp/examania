@@ -1,0 +1,42 @@
+---
+import "../assets/Styles/global.css";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Examania - Tu plataforma de exámenes" } =
+  Astro.props;
+---
+
+<!--  Base_layout.astro --><!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script>
+      import "../scripts/carrusel.js";
+    </script>
+    <link
+      rel="stylesheet"
+      href="/node_modules/@splidejs/splide/dist/css/splide.min.css"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+    <ScrollToTop showAfter={300} />
+  </body>
+</html>
